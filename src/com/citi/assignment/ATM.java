@@ -18,7 +18,7 @@ public class ATM {
     }
 
     public Map<Integer, Integer> getDenominations() {
-        return new ConcurrentHashMap<>(denominations); // Return a copy for immutability
+        return new ConcurrentSkipListMap<>(denominations); // Return a copy for immutability
     }
 
     public synchronized Map<Integer, Integer> withdraw(int amount) throws InsufficientFundsException, InvalidAmountException {
