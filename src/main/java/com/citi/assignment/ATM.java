@@ -3,7 +3,6 @@ package com.citi.assignment;
 import java.util.Map;
 import java.util.NavigableMap;
 import java.util.TreeMap;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -29,8 +28,8 @@ public class ATM {
         lock.lock(); // Acquire lock for thread safety
         try {
             int remainingAmount = amount;
-            int denomination = 0;
-            int availableNotes = 0;
+            int denomination;
+            int availableNotes;
             NavigableMap<Integer, Integer> dispensedNotes = new TreeMap<Integer, Integer>(Integer::compare).descendingMap(); // Denominations dispensed
             //HashMap<Integer, Integer> dispensedNotes = new HashMap<>();
             for (Map.Entry<Integer, Integer> entry : denominations.entrySet()) {

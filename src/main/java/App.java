@@ -1,6 +1,4 @@
 import com.citi.assignment.ATM;
-import com.citi.assignment.InsufficientFundsException;
-import com.citi.assignment.InvalidAmountException;
 import com.citi.assignment.WithdrawalProcessor;
 
 import java.util.HashMap;
@@ -69,7 +67,7 @@ public class App {
 
 
         } catch (ExecutionException e) {
-            Throwable cause = e.getCause();
+          //  Throwable cause = e.getCause();
         } finally {
             executorService.shutdown();
             executorService.awaitTermination(1, TimeUnit.MINUTES);
