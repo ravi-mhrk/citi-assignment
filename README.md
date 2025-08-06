@@ -27,7 +27,7 @@ Open in IntelliJ IDEA (or preferred IDE)
  - Open IntelliJ IDEA.
  - Select File > Open and navigate to the cloned project directory.
  - IntelliJ IDEA should automatically detect the build.gradle file and prompt you to import the project as a Gradle project. Allow it to do so, which will set up dependencies and project structure. 
- - Navigate to the ATMTest.java file in the src/test/java/com/example/atm package. 
+ - Navigate to the ATMTest.java file in the src/test/java/com/example/assignment package. 
  - Right-click on the ATMTest class name (or individual test methods) and select Run 'ATMTest'. 
  - The test results will appear in IntelliJ IDEA's "Run" or "Test Results" window.
  Using Gradle (Command Line)

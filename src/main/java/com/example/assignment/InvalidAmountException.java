@@ -1,4 +1,4 @@
-package com.citi.assignment;
+package com.example.assignment;
 
 public class InvalidAmountException extends Exception {
     public InvalidAmountException(String message) {

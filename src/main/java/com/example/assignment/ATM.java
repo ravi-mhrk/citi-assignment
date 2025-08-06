@@ -1,4 +1,4 @@
-package com.citi.assignment;
+package com.example.assignment;
 
 import java.util.Map;
 import java.util.NavigableMap;

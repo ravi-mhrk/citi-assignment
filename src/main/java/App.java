@@ -1,5 +1,5 @@
-import com.citi.assignment.ATM;
-import com.citi.assignment.WithdrawalProcessor;
+import com.example.assignment.ATM;
+import com.example.assignment.WithdrawalProcessor;
 
 import java.util.HashMap;
 import java.util.Map;

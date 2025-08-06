@@ -1,4 +1,4 @@
-package com.citi.assignment;
+package com.example.assignment;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

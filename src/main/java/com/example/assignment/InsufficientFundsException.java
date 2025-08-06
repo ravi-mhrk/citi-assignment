@@ -1,4 +1,4 @@
-package com.citi.assignment;
+package com.example.assignment;
 
 public class InsufficientFundsException extends Exception {
     public InsufficientFundsException(String message) {
