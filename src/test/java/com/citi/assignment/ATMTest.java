@@ -1,9 +1,5 @@
-package com.citi.test;
+package com.citi.assignment;
 
-import com.citi.assignment.ATM;
-import com.citi.assignment.InsufficientFundsException;
-import com.citi.assignment.InvalidAmountException;
-import com.citi.assignment.WithdrawalProcessor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
