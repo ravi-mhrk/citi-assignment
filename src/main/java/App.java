@@ -1,4 +1,6 @@
 import com.example.assignment.ATM;
+import com.example.assignment.ATMController;
+import com.example.assignment.Currency;
 import com.example.assignment.WithdrawalProcessor;
 
 import java.util.HashMap;
@@ -11,6 +13,7 @@ public class App {
         System.out.println("Running ATM application");
         App.testSingleTransaction();
         App.parallelTransactions();
+        App.multipleCurrencies();
     }
 
     public static void testSingleTransaction() throws Exception {
@@ -73,6 +76,49 @@ public class App {
             executorService.awaitTermination(1, TimeUnit.MINUTES);
         }
     }
+
+    public static void multipleCurrencies() throws Exception{
+        System.out.println("Running Multiple CUrriences");
+        // --- Initialize Denominations for Multiple Currencies ---
+        Map<Currency, Map<Integer, Integer>> initialCurrencyDenominations = new HashMap<>();
+
+        // USD Denominations for the  ATM instance.
+        Map<Integer, Integer> usdDenominations = new HashMap<>();
+        usdDenominations.put(500, 5);
+        usdDenominations.put(200, 10);
+        usdDenominations.put(100, 20);
+        usdDenominations.put(50, 20);
+        usdDenominations.put(20, 50);
+        usdDenominations.put(10, 100);
+        initialCurrencyDenominations.put(Currency.USD, usdDenominations);
+
+        // EUR Denominations for a new ATM instance
+        Map<Integer, Integer> eurDenominations = new HashMap<>();
+        eurDenominations.put(500, 2);
+        eurDenominations.put(200, 5);
+        eurDenominations.put(100, 10);
+        eurDenominations.put(50, 10);
+        eurDenominations.put(20, 25);
+        eurDenominations.put(10, 50);
+        initialCurrencyDenominations.put(Currency.EUR, eurDenominations);
+
+        // GBP Denominations (example for testing addCurrencySupport)
+        Map<Integer, Integer> gbpDenominations = new HashMap<>();
+        gbpDenominations.put(50, 10);
+        gbpDenominations.put(20, 20);
+        gbpDenominations.put(10, 50);
+
+        ATMController atmController = new ATMController(initialCurrencyDenominations);
+        Map<Integer, Integer> dispensedNotes = atmController.withdraw(770, Currency.USD);
+        dispensedNotes.forEach((key, value) -> System.out.println("Denomination:Rs" + key + " x " + value));
+
+        System.out.println("Denominations in ATM after withdrawl of 770");
+        Map<Integer, Integer> denominations = atmController.getDenominations(Currency.USD);
+        denominations.forEach((key, value) -> System.out.println(Currency.USD+"Denomination:" + key + " x " + value));
+
     }
+
+}
+
 
 
